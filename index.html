@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handzapp Assignment</title>
+
+    <link rel="stylesheet" href="app/css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="header-container">
+                <div class="container">
+                    <div class="logo-menu">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="./assets/images/logo.png" alt="Handzapp Logo" />
+                            </a>
+                        </div>
+                        <div class="menu">
+                            <ul>
+                                <li class="active tab">
+                                    Title 1
+                                </li>
+
+                                <li class="tab">
+                                    Title 2
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="profile-link">
+                        <div class="link">
+                            <a href="#">My Rewards</a>
+                        </div>
+                        <div class="profile">
+                            <img src="./assets/images/profile-pic.png" alt="Profile pic" />
+                            <span></span>
+
+
+                            <div class="drop-down">
+                                <div class="profile-details">
+                                    <div class="profile-image">
+                                        <img src="./assets/images/profile-pic.png" alt="Profile Pic" />
+                                    </div>
+                                    <div class="profile-info">
+                                        <h3>Rebecca Willams</h3>
+                                        <p>+91 88888 99999</p>
+                                        <p>rebacca.willi@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="invitations">
+                                    <div class="text">
+                                        <h3>Invitations</h3>
+                                        <p>rebacca.willi@gmail.com</p>
+                                    </div>
+                                    <div class="invite-counts">
+                                        99
+                                    </div>
+                                </div>
+                                <ul class="menu-items">
+                                    <li>
+                                        <a href="#">Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Wallet</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Help</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="body">
+            <div class="title-tabs">
+                <div class="title">
+                    Title 1
+                </div>
+                <div class="tabs">
+                    <ul>
+                        <li class="active">
+                            Active
+                        </li>
+                        <li>
+                            Deleted
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-contents">
+
+            </div>
+        </section>
+    </div>
+
+    <script>
+        var menu = document.querySelector('.menu'),
+        title = document.querySelector('.title')
+
+        function tabs(elem) {
+            var li = document.querySelectorAll('.tab');
+
+            [].forEach.call(li, function(lin) {
+                lin.classList.remove("active")
+            });
+            elem.classList.add("active");
+            title.innerHTML = elem.innerHTML
+        }
+
+         document.addEventListener("DOMContentLoaded", function(){
+            document.addEventListener("click", function(e){
+                var elem = e.target;
+                if(elem.classList.contains("tab")){
+                    tabs(elem)
+                }
+            })
+        })
+        </script>
+</body>
+
+</html>

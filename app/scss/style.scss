@@ -1,0 +1,361 @@
+@import './variables/normalize.scss';
+
+header{
+    height: 70px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+    position: relative;
+    background: $white;
+    @media (max-width:768px){
+        height: 60px;
+    }
+    @media (max-width:550px){
+        height: 50px;
+    }
+    @media (max-width:440px){
+        height: 50px;
+    }
+ 
+    .header-container{
+        .container{
+            @include flex-space-between;
+            height: 70px;
+            @media (max-width:1200px){
+                padding: 0 20px;
+            }
+            @media (max-width:768px){
+                height: 60px;
+            }
+            @media (max-width:550px){
+                height: 50px;
+            }
+            @media (max-width:440px){
+                height: 50px;
+            }
+        }
+        .logo-menu{
+            @include flex;
+            
+            .logo{
+                img{
+                    height: 22px;
+                    @media (max-width:550px){
+                        height: 18px;
+                    }
+                    @media (max-width:440px){
+                        height: 15px;
+                    }
+                }
+            }
+            .menu{
+                ul{ 
+                    @include flex;
+                    li{
+                        margin: 0 50px;
+                        color: $black;
+                        font-weight: 400;
+                        cursor: pointer;
+                        &.active{
+                            color: $themeColor;
+                            font-weight: 700;
+                        }
+
+                        @media (max-width:768px){
+                           font-size: 12px;
+                           margin: 0 30px;
+                        }
+
+                        @media (max-width:550px){
+                            margin: 0 20px;
+                        }
+                        @media (max-width:440px){
+                            margin: 0 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .profile-link{
+            @include flex;
+            position: relative;
+
+            .link{
+                text-transform: uppercase;
+                font-weight: 400;
+                margin-right: 95px;
+                font-size: 16px;
+                &:hover{
+                    color: $themeColor;
+                }
+                @media (max-width:768px){
+                    font-size: 12px;
+                    margin-right: 65px;
+                 }
+                 @media (max-width:550px){
+                    margin-right: 35px;
+                 }
+                 @media (max-width:550px){
+                    margin-right: 25px;
+                }
+
+                @media (max-width:440px){
+                    margin-right: 15px;
+                }
+            }
+
+            .profile{
+                position: relative;
+                padding: 10px 30px 10px 0;
+                cursor: pointer;
+                @media (max-width:440px){
+                    padding: 10px 20px 10px 0;
+                }
+                @media (max-width:768px){
+                    padding: 10px 20px 10px 0;
+                }
+                &:after{
+                    @include pseudo-filler;
+                    @include arrow(-135deg, 29px, 0);
+
+                    @media (max-width:768px){
+                        @include arrow(-135deg, 25px, 0);
+                    }
+                    @media (max-width:550px){
+                        @include arrow(-135deg, 22px, 0);
+                    }
+                    @media (max-width:440px){
+                        @include arrow(-135deg, 23px, 0);
+                    }
+                }
+                img{
+                    width: 50px;
+                    @media (max-width:768px){
+                        width: 40px;
+                    }
+                    @media (max-width:550px){
+                        width: 35px;
+                    }
+                }
+                span{
+                    position: absolute;
+                    width: 14px; height: 14px;
+                    background: $red;
+                    border-radius: 50%;
+                    top: 10px;
+                    left: 39px; 
+                    display: none;
+                    @media (max-width:768px){
+                        left: 32px; 
+                    }
+                    @media (max-width:550px){
+                        left: 27px; 
+                        width: 12px;
+                        height: 12px;
+                    }
+                }  
+
+                &:hover{
+                    .drop-down{
+                        display: block;
+                    }
+                    span{
+                        display: block;
+                    }
+                    &:after{
+                        @include pseudo-filler;
+                        @include arrow(45deg, 32px, 0);
+                    }
+                }
+
+                .drop-down{
+                    position: absolute;
+                    top: 70px;
+                    right: 0;
+                    width: 320px;
+                    background: $white;
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+                    display: none;
+                    z-index: 1;
+                    @media (max-width:768px){
+                        top: 60px;
+                    }
+
+                    @media (max-width:550px){
+                        top: 50px;
+                        width: 300px;
+                    }
+                    @media (max-width:440px){
+                        width: 250px;
+                    }
+    
+                    .profile-details{
+                        @include flex;
+                        padding: 15px;
+                        
+                        .profile-image{
+                            border-right: 1px solid $lineGray;
+                            margin-right: 15px;
+                            padding-right: 15px;
+                            img{
+                                width: 60px;
+                            }
+                        }
+    
+                        .profile-info{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            height: 60px;
+                            h3{
+                                font-size: 16px;
+                                font-weight: 400;
+                            }
+                            p{
+                                font-size: 12px;
+                                color: $fontGray;
+                            }
+                        }
+                    }
+    
+                    .invitations{
+                        height: 72px;
+                        @include flex-space-between;
+                        padding: 15px;
+                        background: $bgColorLight;
+                        border-top: 1px solid $lineGray;
+                        border-bottom: 1px solid $lineGray;
+                        .text{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            height: 42px;
+    
+                            h3{
+                                font-weight: normal;
+                            }
+                            p{
+                                color: $fontGray;
+                                font-size: 12px;
+                            }
+                        }
+    
+                        .invite-counts{
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: $themeColor;
+                            color: $white;
+                            @include flex;
+                            justify-content: center;
+                            font-size: 10px;
+                            position: relative;
+                            margin-right: 20px;
+    
+                            &:after{
+                                @include pseudo-filler;
+                                @include arrow(135deg, 7px, -20px);
+                            }
+                        }
+                    }
+    
+                    .menu-items{
+                        li{
+                            border-bottom: 1px solid $lineGray;
+                            a{
+                                display: block;
+                                padding: 15px;
+                                font-size: 14px;
+                                &:hover{
+                                    background: $themeColor;
+                                    color: $white
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.body{
+    max-width: 1110px;
+    margin: 60px auto;
+    height: 100vh;
+    background: $white;
+    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.14);
+
+    @media (max-width:1300px){
+        margin: 60px 50px;
+    }
+    @media (max-width:550px){
+        margin: 30px 40px;
+    }
+
+    .title-tabs{
+        background: $bgColorLight;
+        height: 125px;
+        padding: 30px 30px 0;
+        @include flex-column;
+        @media (max-width:768px){
+            padding: 20px 20px 0;
+            height: 100px;
+        }
+        @media (max-width:550px){
+            padding: 15px 15px 0;
+            height: 90px;
+        }
+        @media (max-width:440px){
+            padding: 15px 15px 0;
+            height: 70px;
+        }
+
+        .title{
+            font-size: 24px;
+            font-weight: 400;
+            @media (max-width:768px){
+                font-size: 22px;
+            }
+            @media (max-width:550px){
+                font-size: 20px;
+            }
+            @media (max-width:440px){
+                font-size: 16px;
+            }
+        }
+        .tabs{
+            ul{
+                @include flex;
+                li{
+                    width: 120px;
+                    border-bottom: 3px solid transparent;
+                    font-size: 15px;
+                    color: $themeColor;
+                    padding: 8px 0;
+                    text-align: center;
+                    text-transform: uppercase;
+                    opacity: 0.7;
+                    cursor: pointer;
+
+                    &.active{
+                        opacity: 1;
+                        border-bottom-color: $themeColor
+                    }
+
+                    @media (max-width:768px){
+                        font-size: 13px;
+                    }
+                    @media (max-width:550px){
+                        font-size: 11px;
+                        width: 100px;
+                    }
+                    @media (max-width:440px){
+                        font-size: 10px;
+                        width: 80px;
+                    }
+            
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+@import './variables.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+    font-family: 'Noto Sans', 'Trebuchet MS', Arial, sans-serif;
+}
+
+body{
+    background-color: $bgColor;
+    height: 100%
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol{
+    list-style: none;
+} 
+
+.container{
+    max-width: $containerWidth;
+    margin: 0 auto;
+}

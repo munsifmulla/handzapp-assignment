@@ -1,0 +1,62 @@
+$themeColor: #276c83;
+$white: #ffffff;
+$black: #000000;
+$lineGray: #c7c7cc;
+$red: #ff3b30;
+$gray: #f0f0f0;
+$fontGrayDark: #606060;
+$fontGray: #9b9b9b;
+$offerBannerColor: #848ac6;
+$bgColor: #f5f5f5;
+$bgColorLight: #f8f8f8;
+$titleBlack: #1c1c1c;
+
+//Sizes
+$containerWidth: 1200px;
+
+
+
+//Mixins
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-top {
+    display: flex;
+    align-items: unset;
+    justify-content: space-between;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin pseudo-filler {
+    content: '';
+    position: absolute;
+}
+
+@mixin arrow($deg, $top, $right) {
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid $lineGray;
+    border-left: 2px solid $lineGray;
+    position: absolute;
+    right: $right; top: $top;
+    transform: rotate($deg)
+}
